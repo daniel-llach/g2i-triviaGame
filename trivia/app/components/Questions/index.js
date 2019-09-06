@@ -1,5 +1,5 @@
 import React, {PureComponent} from 'react'
-import {StyleSheet, Text, View} from 'react-native'
+import {ActivityIndicator, StyleSheet, Text, View} from 'react-native'
 import {actions, connect} from '../../store'
 import ButtonWidthBorder from '../ButtonWidthBorder'
 import he from 'he'
@@ -21,15 +21,29 @@ class Questions extends PureComponent {
 
     return (
       <View style={styles.questions}>
-        <View style={styles.box}>
-          <Text style={styles.content}>
-            {he.decode(currentQuestionContent)}
-          </Text>
+        <View styles={styles.question}>
+          <View style={styles.box}>
+            {currentQuestionContent.length > 0 ? (
+              <Text style={styles.content}>
+                {he.decode(currentQuestionContent)}
+              </Text>
+            ) : (
+              <ActivityIndicator color="black" />
+            )}
+          </View>
+          <Text style={styles.paginator}>{currentQuestion + 1} of 10</Text>
         </View>
-        <Text style={styles.paginator}>{currentQuestion + 1} of 10</Text>
         <View style={styles.alternatives}>
-          <ButtonWidthBorder title={'TRUE'} action={() => this.next(true)} />
-          <ButtonWidthBorder title={'FALSE'} action={() => this.next(false)} />
+          <ButtonWidthBorder
+            title={'TRUE'}
+            action={() => this.next(true)}
+            disabled={currentQuestionContent.length === 0}
+          />
+          <ButtonWidthBorder
+            title={'FALSE'}
+            action={() => this.next(false)}
+            disabled={currentQuestionContent.length === 0}
+          />
         </View>
       </View>
     )

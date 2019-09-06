@@ -1,12 +1,21 @@
 import React from 'react'
 import {StyleSheet, Text, TouchableOpacity} from 'react-native'
 
-const ButtonWidthBorder = ({title, action}) => {
+const ButtonWidthBorder = ({title, action, disabled}) => {
   return (
-    <TouchableOpacity style={styles.button} onPress={() => action()}>
-      <Text style={styles.buttonText}>{title}</Text>
+    <TouchableOpacity
+      style={[styles.button, disabled && styles.disabled]}
+      onPress={() => action()}
+      disabled={disabled}>
+      <Text style={[styles.buttonText, disabled && styles.disabledText]}>
+        {title}
+      </Text>
     </TouchableOpacity>
   )
+}
+
+ButtonWidthBorder.dafualtProps = {
+  disabled: false,
 }
 
 const styles = StyleSheet.create({
@@ -21,6 +30,12 @@ const styles = StyleSheet.create({
   buttonText: {
     textAlign: 'center',
     fontSize: 25,
+  },
+  disabled: {
+    borderColor: 'grey',
+  },
+  disabledText: {
+    color: 'grey',
   },
 })
 
