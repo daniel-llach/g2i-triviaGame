@@ -2,6 +2,7 @@ import React from 'react'
 import {StyleSheet, Text, View} from 'react-native'
 import {actions, connect} from '../../store'
 import ButtonWidthBorder from '../ButtonWidthBorder'
+import he from 'he'
 
 const Questions = ({
   questions,
@@ -20,7 +21,7 @@ const Questions = ({
   }
   return (
     <View style={styles.questions}>
-      <Text style={styles.content}>{currentQuestionContent}</Text>
+      <Text style={styles.content}>{he.decode(currentQuestionContent)}</Text>
       <View style={styles.choose}>
         <ButtonWidthBorder title={'TRUE'} action={() => next(true)} />
         <ButtonWidthBorder title={'FALSE'} action={() => next(false)} />
