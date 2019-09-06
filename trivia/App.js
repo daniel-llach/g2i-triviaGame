@@ -5,11 +5,12 @@ import {createStackNavigator} from 'react-navigation-stack'
 import routes from './app/routes'
 
 const navigationHeader = {
+  headerLayoutPreset: 'center',
   defaultNavigationOptions: {
     headerStyle: {
       height: 100,
       backgroundColor: '#f5f2f0',
-      borderBottomColor: '#f5f2f0',
+      elevation: 0,
     },
   },
 }
