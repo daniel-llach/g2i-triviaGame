@@ -12,6 +12,7 @@ const Resume = ({questions, score}) => {
         renderItem={({item, index}) => {
           return <ResumeRow item={item} success={score[index]} />
         }}
+        keyExtractor={(item, i) => `r-${i}`}
       />
     </ScrollView>
   )
