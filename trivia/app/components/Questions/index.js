@@ -6,10 +6,11 @@ import he from 'he'
 
 class Questions extends PureComponent {
   next = answer => {
-    const {finish, score} = this.props
+    const {finish, navigate} = this.props
+
     if (finish) {
       // go to the result view
-      console.log('RESULTS!: ', score)
+      navigate('Results')
     } else {
       actions.nextQuestion(answer)
     }
@@ -73,11 +74,8 @@ const styles = StyleSheet.create({
   },
 })
 
-export default connect(
-  ({currentQuestionContent, currentQuestion, score, finish}) => ({
-    currentQuestionContent,
-    currentQuestion,
-    score,
-    finish,
-  }),
-)(Questions)
+export default connect(({currentQuestionContent, currentQuestion, finish}) => ({
+  currentQuestionContent,
+  currentQuestion,
+  finish,
+}))(Questions)

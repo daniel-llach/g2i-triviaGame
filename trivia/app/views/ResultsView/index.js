@@ -1,25 +1,35 @@
 import React, {PureComponent} from 'react'
 import {StyleSheet, View} from 'react-native'
 import Header from '../../components/Header'
-import Questions from '../../components/Questions'
+import ButtonWidthBorder from '../../components/ButtonWidthBorder'
+import Resume from '../../components/Resume'
 import {actions} from '../../store'
 
-class QuizView extends PureComponent {
+class ResultsView extends PureComponent {
   static navigationOptions = () => {
     return {
-      headerTitle: <Header getTitleFromcurrentQuestion />,
+      headerTitle: <Header line1={'You scored'} showScored />,
       headerLeft: null,
     }
   }
 
-  componentDidMount() {
-    actions.getQuestions()
+  pressPlayAgainButton = () => {
+    const {navigation} = this.props
+    const {navigate} = navigation
+    // reset the store
+    actions.reStart()
+    // go to home
+    navigate('Home')
   }
 
   render() {
     return (
       <View style={styles.container}>
-        <Questions />
+        <Resume />
+        <ButtonWidthBorder
+          title={'PLAY AGAIN?'}
+          action={this.pressPlayAgainButton}
+        />
       </View>
     )
   }
@@ -36,4 +46,4 @@ const styles = StyleSheet.create({
   },
 })
 
-export default QuizView
+export default ResultsView

@@ -1,8 +1,8 @@
 import React from 'react'
-import {Provider} from './store'
+import {Provider} from './app/store'
 import {createAppContainer} from 'react-navigation'
 import {createStackNavigator} from 'react-navigation-stack'
-import routes from './routes'
+import routes from './app/routes'
 
 const navigationHeader = {
   defaultNavigationOptions: {
