@@ -1,10 +1,10 @@
-import React, {Component} from 'react'
+import React, {PureComponent} from 'react'
 import {StyleSheet, Text, View} from 'react-native'
 import Header from '../../components/Header'
 import ButtonWidthBorder from '../../components/ButtonWidthBorder'
 
-class HomeView extends Component {
-  static navigationOptions = ({navigation}) => {
+class HomeView extends PureComponent {
+  static navigationOptions = () => {
     return {
       headerTitle: <Header line1="Welcome to the" line2="Trivia Challenge!" />,
     }
@@ -13,7 +13,7 @@ class HomeView extends Component {
   pressBeginButton = () => {
     const {navigation} = this.props
     const {navigate} = navigation
-    navigate('Home')
+    navigate('Quiz')
   }
 
   render() {

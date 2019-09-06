@@ -13,21 +13,30 @@ export const actionsCreators = {
     )
     return {
       questions: response.data.results,
+      currentQuestion: 0,
+      currentQuestionTitle: response.data.results[0].category,
+      currentQuestionContent: response.data.results[0].question,
     }
   },
-  resetQuestions: () => {
+  nextQuestion: ({score, questions, currentQuestion}, actions, answer) => {
+    const next = currentQuestion < 10 ? ++currentQuestion : currentQuestion
+    const rightAnswer =
+      questions[currentQuestion].correct_answer.toLowerCase() === 'true'
+    const result = rightAnswer === answer
+    return {
+      currentQuestion: next,
+      currentQuestionTitle: questions[next].category,
+      currentQuestionContent: questions[next].question,
+      score: [...score, result],
+    }
+  },
+  reStart: () => {
     return {
       questions: [],
-    }
-  },
-  saveAnswer: (answers, answer) => {
-    return {
-      answers: [...answers, answer],
-    }
-  },
-  resetAnswers: () => {
-    return {
-      answers: [],
+      currentQuestion: 0,
+      currentQuestionTitle: '',
+      currentQuestionContent: '',
+      score: [],
     }
   },
 }

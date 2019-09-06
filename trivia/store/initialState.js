@@ -1,4 +1,7 @@
 export const initialState = {
   questions: [],
-  answers: [],
+  currentQuestion: 0,
+  currentQuestionTitle: '',
+  currentQuestionContent: '',
+  score: [],
 }

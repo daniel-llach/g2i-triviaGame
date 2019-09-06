@@ -1,10 +1,10 @@
 import createStore from 'react-waterfall'
-import initialState from './initialState'
-import actionsCreators from './actions'
+import {initialState} from './initialState'
+import {actionsCreators} from './actions'
 
 const config = {
-  initialState: initialState,
-  actionsCreators: actionsCreators,
+  initialState,
+  actionsCreators,
 }
 
 export const {Provider, connect, actions} = createStore(config)
