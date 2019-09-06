@@ -10,7 +10,7 @@ class HomeView extends Component {
     }
   }
 
-  pressQuizButton = () => {
+  pressBeginButton = () => {
     const {navigation} = this.props
     const {navigate} = navigation
     navigate('Home')
@@ -23,7 +23,7 @@ class HomeView extends Component {
           You will presented with 10 True or False questions.
         </Text>
         <Text style={styles.advice2}>Can you score 100%?</Text>
-        <ButtonWidthBorder title={'BEGIN'} action={this.pressQuizButton} />
+        <ButtonWidthBorder title={'BEGIN'} action={this.pressBeginButton} />
       </View>
     )
   }
