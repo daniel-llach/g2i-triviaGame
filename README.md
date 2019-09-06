@@ -1,21 +1,69 @@
 # g2i-triviaGame
 
-g2i Coding challenge
+### Routing
 
-## Instructions
+The app has 3 views that's handled with `react-navigation@4.0.0`, the routes and the views (both has same names) are:
+1.- Home
+2.- Quiz
+3.- Results
 
-| ### IphoneX | Android: nexus 5X |
-| ----------- | ----------------- |
+### Store
 
+The app has a Store too handled with `react-waterfall@4.0.4` that libraries it's a middleware on that use _CONTEXT API_ release with `React 16` I used this over redux this time because it's really cheap and strong to handle basic apps like this one and it's really simple to use (we used for TBS and TNT for Turner Broadcasting System company and works really well)
 
-| 1.- git clone https://github.com/daniel-llach/FE-Code-Test.git cocktails
-2.- cd cocktails
-3.- git checkout code-test
-4.- yarn install
-5.- react-native run-ios
-6.- Enjoy | 1.- step 5 replace for open android folder into android studio
+There is only 3 actions in the project:
+
+- _getQuestions_:
+  · Get the endpoint data
+  · Set the first question title content to show in the quiz view.
+
+- _nextQuestion_:
+  · Save the user answer for the current question
+  · Set the next current question
+  · Has a flag to indicate when the final question is answered
+
+- _restart_:
+  . Restart the values in the store as the beginning
+
+### Components
+
+The project has 4 components:
+
+- _ButtonWidthBorder_:
+  This is used for all the buttons of the app and it has a flag to disabled that it's useful on `Quiz` view to avoid the user press the answer before the question are loading (that make an error, of course)
+
+- _Header_:
+  This handle all the headers for the `react-navigation` you can pass from props with static text for both lines or trigger dinamic text like the question title in `Quiz` view or the user score in the `Results` view (this components connect to the store)
+
+- _Questions_:
+  Here is the core content for the question, but just the UI not the logic. It shows the question content and the buttons of the game (true/false)
+
+- _Resume_:
+  This component is shown on the `Results` screen and shows the right and wrong questions, it has scroll to the user can see all the content.
+
+#### note: All the question content text it's handle with `he` library to decode HTML entities on the string so that way we can see the proper content and avoid ugly text.
+
+## Install
+
+### IOS
+
+1.- `git clone https://github.com/daniel-llach/g2i-triviaGame.git trivia`
+2.- `cd trivia`
+3.- `git checkout code-test`
+4.- `yarn install`
+5.- `react-native run-ios`
+6.- Enjoy
+
+### Android
+
+1.- step 5 replace for open android folder into android studio
 2.- install and accept all the stuff up to the griddle build successfully
-3.- echo "sdk.dir = /Users/\$(whoami)/Library/Android/sdk" > android/local.properties
+3.- `echo "sdk.dir = /Users/$(whoami)/Library/Android/sdk" > android/local.properties`
 4.- on android studio run some device on emulator
-5.- react-native run-android |
+5.- `react-native run-android`
+
+## Previews
+
+| ### IphoneX                   | Android: nexus 5X             |
+| ----------------------------- | ----------------------------- |
 | ![](readmeAssets/iphoneX.gif) | ![](readmeAssets/nexus5X.gif) |

@@ -1,7 +1,7 @@
 import React from 'react'
 import {FlatList, ScrollView, StyleSheet} from 'react-native'
 import {connect} from '../../store'
-import ResumeRow from '../ResumeRow'
+import ResumeRow from './ResumeRow'
 
 const Resume = ({questions, score}) => {
   console.log('score: ', score)

@@ -1,6 +1,6 @@
 import React from 'react'
 import {StyleSheet, Text, View} from 'react-native'
-import {connect} from '../../store'
+import {connect} from '../../../store'
 import he from 'he'
 
 const ResumeRow = ({item, success}) => {
