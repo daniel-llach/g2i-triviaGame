@@ -5,7 +5,6 @@ import {connect} from '../../store'
 const Header = ({
   line1,
   line2,
-  questions,
   currentQuestionTitle,
   getTitleFromcurrentQuestion,
 }) => {
@@ -23,6 +22,8 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 28,
     fontWeight: 'bold',
+    maxWidth: 320,
+    textAlign: 'center',
   },
 })
 
@@ -30,7 +31,6 @@ Header.defaultProps = {
   getTitleFromcurrentQuestion: false,
 }
 
-export default connect(({questions, currentQuestionTitle}) => ({
-  questions,
+export default connect(({currentQuestionTitle}) => ({
   currentQuestionTitle,
 }))(Header)

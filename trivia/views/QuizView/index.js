@@ -26,16 +26,6 @@ class QuizView extends PureComponent {
 }
 
 const styles = StyleSheet.create({
-  advice: {
-    width: 230,
-    textAlign: 'center',
-    fontSize: 28,
-    marginTop: 80,
-  },
-  advice2: {
-    textAlign: 'center',
-    fontSize: 24,
-  },
   container: {
     backgroundColor: '#f5f2f0',
     flex: 1,

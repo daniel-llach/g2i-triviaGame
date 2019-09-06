@@ -4,4 +4,5 @@ export const initialState = {
   currentQuestionTitle: '',
   currentQuestionContent: '',
   score: [],
+  finish: false,
 }

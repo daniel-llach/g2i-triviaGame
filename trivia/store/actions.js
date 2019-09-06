@@ -19,24 +19,31 @@ export const actionsCreators = {
     }
   },
   nextQuestion: ({score, questions, currentQuestion}, actions, answer) => {
-    const next = currentQuestion < 10 ? ++currentQuestion : currentQuestion
+    // Check if the right answer of the proper question
     const rightAnswer =
       questions[currentQuestion].correct_answer.toLowerCase() === 'true'
+    // Compare if the right answer is the same that the user did choose
     const result = rightAnswer === answer
+    // Add the result to the score
+    const updateScore = [...score, result]
+    // Set next question, be careful with the questions length
+    const next = currentQuestion === 9 ? 9 : ++currentQuestion
     return {
+      score: updateScore,
       currentQuestion: next,
       currentQuestionTitle: questions[next].category,
       currentQuestionContent: questions[next].question,
-      score: [...score, result],
+      finish: currentQuestion === 9,
     }
   },
   reStart: () => {
     return {
+      score: [],
       questions: [],
       currentQuestion: 0,
       currentQuestionTitle: '',
       currentQuestionContent: '',
-      score: [],
+      finish: false,
     }
   },
 }
