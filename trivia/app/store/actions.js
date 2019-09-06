@@ -19,7 +19,7 @@ export const actionsCreators = {
     }
   },
   nextQuestion: ({score, questions, currentQuestion}, actions, answer) => {
-    // Check if the right answer of the proper question an convert it to a bool
+    // Check which is the right answer of the corresponded question and convert it to a bool
     const rightAnswer =
       questions[currentQuestion].correct_answer.toLowerCase() === 'true'
     // Compare if the right answer is the same that the user did choose
