@@ -3,9 +3,10 @@
 ### Routing
 
 The app has 3 views that's handled with `react-navigation@4.0.0`, the routes and the views (both has same names) are:
-1.- Home
-2.- Quiz
-3.- Results
+
+1. Home
+2. Quiz
+3. Results
 
 ### Store
 
@@ -14,16 +15,18 @@ The app has a Store too handled with `react-waterfall@4.0.4` that libraries it's
 There is only 3 actions in the project:
 
 - _getQuestions_:
-  · Get the endpoint data
-  · Set the first question title content to show in the quiz view.
+
+  - Get the endpoint data
+  - Set the first question title content to show in the quiz view.
 
 - _nextQuestion_:
-  · Save the user answer for the current question
-  · Set the next current question
-  · Has a flag to indicate when the final question is answered
+
+  - Save the user answer for the current question
+  - Set the next current question
+  - Has a flag to indicate when the final question is answered
 
 - _restart_:
-  . Restart the values in the store as the beginning
+  - Restart the values in the store as the beginning
 
 ### Components
 
@@ -47,20 +50,20 @@ The project has 4 components:
 
 ### IOS
 
-1.- `git clone https://github.com/daniel-llach/g2i-triviaGame.git trivia`
-2.- `cd trivia`
-3.- `git checkout code-test`
-4.- `yarn install`
-5.- `react-native run-ios`
-6.- Enjoy
+1. `git clone https://github.com/daniel-llach/g2i-triviaGame.git trivia`
+2. `cd trivia`
+3. `git checkout code-test`
+4. `yarn install`
+5. `react-native run-ios`
+6. Enjoy
 
 ### Android
 
-1.- step 5 replace for open android folder into android studio
-2.- install and accept all the stuff up to the griddle build successfully
-3.- `echo "sdk.dir = /Users/$(whoami)/Library/Android/sdk" > android/local.properties`
-4.- on android studio run some device on emulator
-5.- `react-native run-android`
+1. step 5 replace for open android folder into android studio
+2. install and accept all the stuff up to the griddle build successfully
+3. `echo "sdk.dir = /Users/$(whoami)/Library/Android/sdk" > android/local.properties`
+4. on android studio run some device on emulator
+5. `react-native run-android`
 
 ## Previews
 
