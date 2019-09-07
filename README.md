@@ -44,7 +44,7 @@ The project has 4 components:
 - _Resume_:
   This component is shown on the `Results` screen and shows the right and wrong questions, it has scroll to the user can see all the content. (this component connect to the store)
 
-#### note: All the *text* in the questions content it's handle with `he` library to decode HTML entities in the string so that way we can see the pretty text.
+#### note: All the _text_ in the questions content it's handle with `he` library to decode HTML entities in the string so that way we can see the pretty text.
 
 ## Install
 
@@ -58,7 +58,7 @@ The project has 4 components:
 
 ### Android
 
-1. step 5 replace for open android folder into android studio
+1. step 4 replace for open android folder into android studio
 2. install and accept all the stuff up to the griddle build successfully
 3. `echo "sdk.dir = /Users/$(whoami)/Library/Android/sdk" > android/local.properties`
 4. on android studio run some device on emulator
@@ -66,6 +66,6 @@ The project has 4 components:
 
 ## Previews
 
-| ### IphoneX                   | Android: nexus 5X             |
+| IphoneX                       | Android: nexus 5X             |
 | ----------------------------- | ----------------------------- |
 | ![](readmeAssets/iphoneX.gif) | ![](readmeAssets/nexus5X.gif) |
